@@ -8,53 +8,370 @@
 
 body {
     font-family: "Inter", Arial, Helvetica, sans-serif;
-    color: #fff;
-    background-color: #fff;
+    color: #333333;
+    background-color: #FFFFFF;
 }
 
-header {
-    background-image: url('../assets/placeholder_sourceengine.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 10vh;
-    width: 100%;
+button {
+    cursor: pointer;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+input {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+/* layout 2 colunas */
+.pagina {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 100vh;
+}
+
+/* ---------- lateral ---------- */
+.lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #333333;
+    color: #FFFFFF;
+    text-align: center;
+    padding-top: 20px;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.topo-lateral {
+    padding: 0 10px;
+}
+
+.logo {
+    width: 80px;
+}
+
+.perfil {
+    display: none;
+    padding: 0 10px;
+}
+
+.foto {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #FFFFFF;
+}
+
+.indicadores strong {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.btn-registros {
+    background-color: #333333;
+    color: #FFFFFF;
+    border: none;
+    border-top: 1px solid #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+    padding: 14px;
     text-align: center;
 }
 
-#btn {
+.btn-registros.ativo {
+    background-color: #483DAD;
+    color: #FFFFFF;
+}
+
+.lateral footer {
+    margin-top: auto;
+    background-color: #333333;
+    color: #FFFFFF;
+    padding: 15px;
+    font-size: 0.8rem;
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 10px 0;
+}
+
+.redes img {
+    width: 24px;
+}
+
+/* ---------- principal ---------- */
+main {
+    padding: 15px 30px;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.login {
+    background-color: #FFFFFF;
+    color: #333333;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    padding: 10px 24px;
+}
+
+.logout {
+    background-color: #333333;
+    color: #FFFFFF;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    padding: 10px 24px;
+}
+
+.btnsnav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #333333;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.btnsnav button {
+    background-color: #333333;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 6px;
+    padding: 8px 20px;
+}
+
+.btnsnav button.ativo {
+    background-color: #483DAD;
+}
+
+/* ---------- cards ---------- */
+.card {
+    border: 1px solid #333333;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.operador {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.operador img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dados {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 25px;
+}
+
+.acoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 18px;
+    margin-top: 10px;
+}
+
+.acoes button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    color: #333333;
+    font-weight: 600;
+}
+
+.acoes img {
+    width: 24px;
+}
+
+.acoes button.ativo {
+    color: #FF0000;
+}
+
+.acoes button.ativo img {
+    filter: brightness(0) saturate(100%) invert(13%) sepia(100%) saturate(7482%) hue-rotate(0deg) brightness(101%) contrast(113%);
+}
+
+.comentarios {
+    display: none;
+    border-top: 1px solid #333333;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.lista p {
+    border-left: 3px solid #483DAD;
+    padding-left: 8px;
+    margin-bottom: 6px;
+}
+
+.comentarios input {
+    width: 85%;
+}
+
+.comentarios button {
+    background: none;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    padding: 6px 10px;
+    vertical-align: middle;
+}
+
+.comentarios button img {
+    width: 20px;
+    display: block;
+}
+
+/* ---------- paginação ---------- */
+.paginacao {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.paginacao button {
+    background-color: #333333;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+}
+
+.paginacao button.ativo {
+    background-color: #483DAD;
+    color: #FFFFFF;
+}
+
+/* ---------- formulários ---------- */
+#form-area {
+    display: none;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#form-area h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-top: 14px;
+    margin-bottom: 6px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.comentarios input[type="text"] {
+    width: 85%;
+}
+
+input.invalido {
+    border: 2px solid #FF0000;
+}
+
+.erro {
+    display: block;
+    color: #FF0000;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+.escuro {
+    background-color: #333333;
+    color: #FFFFFF;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    padding: 10px 22px;
+    margin-top: 16px;
+}
+
+.cancelar {
+    background: none;
+    color: #333333;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    padding: 10px 22px;
+    margin-top: 16px;
+    margin-right: 8px;
+}
+
+/* ---------- modal ---------- */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.65);
+    align-items: center;
+    justify-content: center;
+}
+
+.caixa {
+    position: relative;
+    background-color: #FFFFFF;
+    width: 90%;
+    max-width: 400px;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.caixa h2 {
+    text-align: center;
+}
+
+.fechar {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #fff;
-    color: #413d5a;
+    width: 24px;
+    cursor: pointer;
 }
-.btnsnav{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-evenly;
-}
-.btnsnav-button{
-    background-color: #fff;
-    color: #413d5a;
-    height: 100px;
-    border-radius: 14px;
-}
-aside {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    background-image: url('../assets/placeholder.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 90vh;
-    width: 228px;
-}
-footer{
-    width: auto;
-    height: 90vh;
+
+@media (max-width: 800px) {
+    .pagina {
+        grid-template-columns: 1fr;
+    }
+    .lateral {
+        height: auto;
+        position: static;
+    }
 }

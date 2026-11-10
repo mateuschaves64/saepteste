@@ -4,32 +4,213 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel Integrado de Apontamentos Operacionais</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-<header>
-    <button id="btn">Login</button>
-    <div class="btnsnav">
-        <div>
-            <button>manutenção</button>
-        </div>
-        <div>
-            <button>operação</button>
-        </div>
-        <div>
-            <button>inspeção</button>
-        </div>
-    </div>
-</header>
-<aside class="lateral">
-    <h1>P I A O</h1>
-    <P>Painel Integrado de Apontamentos Operacionais</P>
-</aside>
-    </main>
-</body>
-<footer>
 
-</footer>
-<script src="../Simulado/script.js"></script>
+<div class="pagina">
+
+    <aside class="lateral">
+        <div class="topo-lateral">
+            <img src="assets/logo-empresa.png" alt="Logo da empresa" class="logo">
+            <h1>P I A O</h1>
+            <p>Painel Integrado de Apontamentos Operacionais</p>
+        </div>
+
+        <div id="perfil" class="perfil">
+            <img id="perfil-foto" src="assets/placeholder.jpg" alt="Foto do operador logado" class="foto">
+            <p id="perfil-nome"></p>
+            <p>Meus apontamentos: <span id="perfil-total">0</span></p>
+            <p>Minhas horas: <span id="perfil-horas">0</span> h</p>
+        </div>
+
+        <div class="indicadores">
+            <p>Total de apontamentos</p>
+            <strong id="total">0</strong>
+            <p>Horas operacionais acumuladas</p>
+            <strong id="horas">0 h</strong>
+        </div>
+
+        <button id="btn-registros" class="btn-registros" disabled>Registros</button>
+
+        <footer>
+            <p>Painel Integrado de Apontamentos Operacionais</p>
+            <div class="redes">
+                <img src="assets/instagram.svg" alt="Instagram">
+                <img src="assets/twitter.svg" alt="Twitter">
+                <img src="assets/linkedin.svg" alt="LinkedIn">
+            </div>
+            <small>Copyright-2026</small>
+        </footer>
+    </aside>
+
+    <main>
+        <header>
+            <button id="btn" class="login">Login</button>
+        </header>
+
+        <div class="btnsnav">
+            <button id="f-manutencao">manutenção</button>
+            <button id="f-operacao">operação</button>
+            <button id="f-inspecao">inspeção</button>
+        </div>
+
+        <section id="feed-area">
+            <div id="feed">
+            <article class="card">
+                <h3 class="titulo">Inspeção dos extintores</h3>
+                <div class="operador">
+                    <img src="assets/placeholder.jpg" alt="Foto do operador">
+                    <span class="nome">Carlos Silva</span>
+                </div>
+                <div class="dados">
+                    <span>Tipo: <strong class="tipo">inspeção</strong></span>
+                    <span>Distância: <strong class="km">5.2</strong> km</span>
+                    <span>Tempo: <strong class="horas">1.67</strong> h</span>
+                    <span>Eficiência: <strong class="eficiencia">3.12</strong> km/h</span>
+                    <span class="data">14:30 - 08/11/26</span>
+                </div>
+                <div class="acoes">
+                    <button class="btn-like"><img src="assets/like.svg" alt="Apoiar"><span class="curtidas">6</span></button>
+                    <button><img src="assets/chat.svg" alt="Comentar"><span class="qtd-coment">0</span></button>
+                </div>
+                <div class="comentarios">
+                    <div class="lista"></div>
+                    <input type="text" placeholder="Escrever um comentário...">
+                    <button><img src="assets/send.svg" alt="Enviar"></button>
+                    <span class="erro"></span>
+                </div>
+            </article>
+            <article class="card">
+                <h3 class="titulo">Operação da prensa</h3>
+                <div class="operador">
+                    <img src="assets/placeholder.jpg" alt="Foto do operador">
+                    <span class="nome">Marina Souza</span>
+                </div>
+                <div class="dados">
+                    <span>Tipo: <strong class="tipo">operação</strong></span>
+                    <span>Distância: <strong class="km">3.5</strong> km</span>
+                    <span>Tempo: <strong class="horas">1.5</strong> h</span>
+                    <span>Eficiência: <strong class="eficiencia">2.33</strong> km/h</span>
+                    <span class="data">16:45 - 07/11/26</span>
+                </div>
+                <div class="acoes">
+                    <button class="btn-like"><img src="assets/like.svg" alt="Apoiar"><span class="curtidas">2</span></button>
+                    <button><img src="assets/chat.svg" alt="Comentar"><span class="qtd-coment">0</span></button>
+                </div>
+                <div class="comentarios">
+                    <div class="lista"></div>
+                    <input type="text" placeholder="Escrever um comentário...">
+                    <button><img src="assets/send.svg" alt="Enviar"></button>
+                    <span class="erro"></span>
+                </div>
+            </article>
+            <article class="card">
+                <h3 class="titulo">Lubrificação das engrenagens</h3>
+                <div class="operador">
+                    <img src="assets/placeholder.jpg" alt="Foto do operador">
+                    <span class="nome">Carlos Silva</span>
+                </div>
+                <div class="dados">
+                    <span>Tipo: <strong class="tipo">manutenção</strong></span>
+                    <span>Distância: <strong class="km">0.45</strong> km</span>
+                    <span>Tempo: <strong class="horas">1.25</strong> h</span>
+                    <span>Eficiência: <strong class="eficiencia">0.36</strong> km/h</span>
+                    <span class="data">13:20 - 06/11/26</span>
+                </div>
+                <div class="acoes">
+                    <button class="btn-like"><img src="assets/like.svg" alt="Apoiar"><span class="curtidas">4</span></button>
+                    <button><img src="assets/chat.svg" alt="Comentar"><span class="qtd-coment">0</span></button>
+                </div>
+                <div class="comentarios">
+                    <div class="lista"></div>
+                    <input type="text" placeholder="Escrever um comentário...">
+                    <button><img src="assets/send.svg" alt="Enviar"></button>
+                    <span class="erro"></span>
+                </div>
+            </article>
+            <article class="card">
+                <h3 class="titulo">Operação do forno</h3>
+                <div class="operador">
+                    <img src="assets/placeholder.jpg" alt="Foto do operador">
+                    <span class="nome">Carlos Silva</span>
+                </div>
+                <div class="dados">
+                    <span>Tipo: <strong class="tipo">operação</strong></span>
+                    <span>Distância: <strong class="km">1.2</strong> km</span>
+                    <span>Tempo: <strong class="horas">3</strong> h</span>
+                    <span>Eficiência: <strong class="eficiencia">0.4</strong> km/h</span>
+                    <span class="data">07:30 - 06/11/26</span>
+                </div>
+                <div class="acoes">
+                    <button class="btn-like"><img src="assets/like.svg" alt="Apoiar"><span class="curtidas">0</span></button>
+                    <button><img src="assets/chat.svg" alt="Comentar"><span class="qtd-coment">0</span></button>
+                </div>
+                <div class="comentarios">
+                    <div class="lista"></div>
+                    <input type="text" placeholder="Escrever um comentário...">
+                    <button><img src="assets/send.svg" alt="Enviar"></button>
+                    <span class="erro"></span>
+                </div>
+            </article>
+            </div>
+            <div class="paginacao">
+                <button id="primeira" disabled>Primeira</button>
+                <button id="anterior" disabled>Anterior</button>
+                <button class="num ativo">1</button>
+                <button class="num">2</button>
+                <button class="num">3</button>
+                <button id="proxima">Próxima</button>
+                <button id="ultima">Última</button>
+            </div>
+        </section>
+
+        <section id="form-area">
+            <h2>Crie seu registro</h2>
+            <form onsubmit="return false">
+                <label for="tipo">Tipo de Apontamento</label>
+                <input type="text" id="tipo" list="tipos" placeholder="manutenção, operação ou inspeção">
+                <datalist id="tipos">
+                    <option value="manutenção">
+                    <option value="operação">
+                    <option value="inspeção">
+                </datalist>
+                <span id="erro-tipo" class="erro"></span>
+
+                <label for="distancia">Deslocamento/Área (metros)</label>
+                <input type="number" id="distancia" placeholder="Ex.: 3500">
+                <span id="erro-distancia" class="erro"></span>
+
+                <label for="tempo">Tempo de Execução (minutos)</label>
+                <input type="number" id="tempo" placeholder="Ex.: 90">
+                <span id="erro-tempo" class="erro"></span>
+
+                <button type="button" id="btn-criar" class="escuro">Criar Registro</button>
+            </form>
+        </section>
+    </main>
+
+</div>
+
+<div id="modal" class="modal">
+    <div class="caixa">
+        <img src="assets/x.svg" alt="Fechar" id="fechar" class="fechar">
+        <h2>Login</h2>
+        <form onsubmit="return false">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="seu.email@empresa.com">
+
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" placeholder="Digite sua senha">
+
+            <p id="erro-login" class="erro"></p>
+
+            <button type="button" id="cancelar" class="cancelar">Cancelar</button>
+            <button type="button" id="entrar" class="escuro">Login</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
 </html>
